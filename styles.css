@@ -79,7 +79,7 @@ a { text-decoration: none; }
 
 .btn-primary:hover {
   background: var(--navy-light);
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.03);
   box-shadow: 4px 4px 0 var(--gold);
 }
 
@@ -91,7 +91,7 @@ a { text-decoration: none; }
 .btn-outline:hover {
   background: var(--navy);
   color: var(--white);
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.03);
   box-shadow: 4px 4px 0 var(--gold);
 }
 
@@ -170,6 +170,51 @@ a { text-decoration: none; }
 .header-cta {
   padding: 10px 18px;
   font-size: 0.8rem;
+}
+
+/* Primary nav + scrollspy */
+.site-nav {
+  display: none;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-link {
+  position: relative;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--ink);
+  padding-bottom: 4px;
+  transition: color 0.2s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gold);
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover { color: var(--navy); }
+.nav-link:hover::after { width: 100%; }
+
+.nav-link.active {
+  color: var(--navy);
+}
+
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Sections sit under the sticky header without their tops getting clipped */
+section[id] {
+  scroll-margin-top: 88px;
 }
 
 /* Hero */
@@ -369,7 +414,7 @@ a { text-decoration: none; }
 }
 
 .program-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-6px) scale(1.015);
   box-shadow: 6px 10px 0 var(--gold);
 }
 
@@ -423,6 +468,12 @@ a { text-decoration: none; }
   border: 2px dashed var(--navy);
   padding: 28px 24px;
   text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 4px 6px 0 var(--gold);
 }
 
 .testimonial-mark {
@@ -607,6 +658,10 @@ a { text-decoration: none; }
 
   .testimonial-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .site-nav {
+    display: flex;
   }
 }
 

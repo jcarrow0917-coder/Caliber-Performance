@@ -72,4 +72,68 @@
   } else {
     revealEls.forEach(function (el) { el.classList.add('in-view'); });
   }
+
+  // Scrollspy: highlight the nav link for whichever section is centered in view
+  var navLinks = document.querySelectorAll('.nav-link[data-nav]');
+  if (navLinks.length && 'IntersectionObserver' in window) {
+    var spySections = [];
+    navLinks.forEach(function (link) {
+      var target = document.getElementById(link.dataset.nav);
+      if (target) spySections.push(target);
+    });
+
+    var spyObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          var link = document.querySelector('.nav-link[data-nav="' + entry.target.id + '"]');
+          if (!link) return;
+          navLinks.forEach(function (l) { l.classList.remove('active'); });
+          link.classList.add('active');
+        });
+      },
+      { rootMargin: '-45% 0px -50% 0px', threshold: 0 }
+    );
+
+    spySections.forEach(function (s) { spyObserver.observe(s); });
+  }
+
+  // Count-up for numeric stat values, triggered once when the stat bar enters view
+  var statBar = document.getElementById('stat-bar');
+  var countEls = document.querySelectorAll('.count-up');
+
+  function animateCountUp(el) {
+    var target = parseInt(el.dataset.target, 10);
+    var duration = 900;
+    var start = null;
+
+    function step(timestamp) {
+      if (!start) start = timestamp;
+      var progress = Math.min((timestamp - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target);
+      if (progress < 1) window.requestAnimationFrame(step);
+    }
+
+    window.requestAnimationFrame(step);
+  }
+
+  if (statBar && countEls.length) {
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      countEls.forEach(function (el) { el.textContent = el.dataset.target; });
+    } else {
+      var countObserver = new IntersectionObserver(
+        function (entries, obs) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              countEls.forEach(animateCountUp);
+              obs.disconnect();
+            }
+          });
+        },
+        { threshold: 0.4 }
+      );
+      countObserver.observe(statBar);
+    }
+  }
 })();

@@ -20,11 +20,17 @@
       <img src="Images/LOGO.jpeg" alt="Caliber Sports Performance logo" class="brand-logo">
       <span class="brand-name">CALIBER <span class="brand-sub">SPORTS PERFORMANCE</span></span>
     </div>
+    <!-- Anchor links today; each data-nav id maps to a future standalone page slug (home, programs, trainer, book) so this can become real multi-page nav later with no rebuild. -->
+    <nav class="site-nav" aria-label="Primary">
+      <a href="#home" class="nav-link" data-nav="home">Home</a>
+      <a href="#programs" class="nav-link" data-nav="programs">Programs</a>
+      <a href="#trainer" class="nav-link" data-nav="trainer">About</a>
+    </nav>
     <a href="#book" class="btn btn-primary header-cta">Book Now</a>
   </div>
 </header>
 
-<section class="hero">
+<section class="hero" id="home">
   <div class="hero-bg-shape" id="heroShape"></div>
   <div class="container hero-inner">
     <img src="Images/LOGO.jpeg" alt="Caliber Sports Performance badge logo" class="hero-badge" id="heroBadge">
@@ -38,14 +44,14 @@
   <div class="scroll-cue reveal" style="transition-delay:.35s"><span></span></div>
 </section>
 
-<section class="stat-bar">
+<section class="stat-bar" id="stat-bar">
   <div class="container stat-bar-inner">
     <div class="stat reveal-up">
       <span class="stat-value">CSCS</span>
       <span class="stat-label">Certified Coach</span>
     </div>
     <div class="stat reveal-up" style="transition-delay:.1s">
-      <span class="stat-value">100%</span>
+      <span class="stat-value"><span class="count-up" data-target="100">0</span>%</span>
       <span class="stat-label">Lynchburg-Based</span>
     </div>
     <div class="stat reveal-up" style="transition-delay:.2s">
