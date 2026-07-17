@@ -12,7 +12,9 @@
 </head>
 <body>
 
-<header class="site-header">
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<header class="site-header" id="siteHeader">
   <div class="container header-inner">
     <div class="brand">
       <img src="Images/LOGO.jpeg" alt="Caliber Sports Performance logo" class="brand-logo">
@@ -23,53 +25,66 @@
 </header>
 
 <section class="hero">
+  <div class="hero-bg-shape" id="heroShape"></div>
   <div class="container hero-inner">
-    <img src="Images/LOGO.jpeg" alt="Caliber Sports Performance badge logo" class="hero-badge">
-    <h1 class="hero-headline">TRAIN LIKE IT MATTERS.</h1>
-    <p class="hero-sub">Speed. Strength. Agility. Built for middle and high school athletes who want to earn the edge — not be handed one.</p>
-    <div class="hero-actions">
+    <img src="Images/LOGO.jpeg" alt="Caliber Sports Performance badge logo" class="hero-badge" id="heroBadge">
+    <h1 class="hero-headline reveal">TRAIN LIKE IT <span class="accent-gold">MATTERS.</span></h1>
+    <p class="hero-sub reveal" style="transition-delay:.1s">Speed. Strength. Agility. Built for middle and high school athletes who want to earn the edge — not be handed one.</p>
+    <div class="hero-actions reveal" style="transition-delay:.2s">
       <a href="#book" class="btn btn-primary">Book a Session</a>
       <a href="#programs" class="btn btn-outline">See Programs</a>
     </div>
   </div>
+  <div class="scroll-cue reveal" style="transition-delay:.35s"><span></span></div>
 </section>
 
 <section class="section intro">
   <div class="container intro-inner">
-    <div class="intro-text">
+    <div class="intro-text reveal-left">
       <h2 class="section-kicker">What We Do</h2>
-      <h3 class="section-title">Performance training with a purpose: results.</h3>
+      <h3 class="section-title">Performance training with a purpose: <span class="accent-gold">results.</span></h3>
       <p>Caliber Sports Performance builds faster, stronger, more competitive athletes through structured speed &amp; agility work, real strength training, and group classes and camps that push kids to compete — not just show up. Every session has a purpose. Every rep counts toward Friday night, the tournament, the tryout.</p>
     </div>
-    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=900&q=80" alt="Young athlete training" class="intro-image" loading="lazy">
+    <div class="intro-image-wrap reveal-right">
+      <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=900&q=80" alt="Young athlete training" class="intro-image parallax-img" loading="lazy">
+    </div>
   </div>
 </section>
 
 <section class="section programs" id="programs">
   <div class="container">
-    <h2 class="section-kicker center">Programs</h2>
-    <h3 class="section-title center">Pick your lane. Put in the work.</h3>
+    <h2 class="section-kicker center reveal">Programs</h2>
+    <h3 class="section-title center reveal">Pick your lane. <span class="accent-gold">Put in the work.</span></h3>
 
     <div class="program-grid">
-      <article class="program-card">
-        <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=700&q=80" alt="Athlete doing speed and agility drills" loading="lazy">
+      <article class="program-card reveal-up">
+        <div class="program-card-img">
+          <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=700&q=80" alt="Athlete doing speed and agility drills" loading="lazy">
+        </div>
         <div class="program-card-body">
+          <span class="program-number">01</span>
           <h4>Speed &amp; Agility Training</h4>
           <p>Placeholder description — mechanics, acceleration, change of direction, and top-end speed work designed to make athletes faster on the field or court.</p>
         </div>
       </article>
 
-      <article class="program-card">
-        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=700&q=80" alt="Athlete strength training with weights" loading="lazy">
+      <article class="program-card reveal-up" style="transition-delay:.1s">
+        <div class="program-card-img">
+          <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=700&q=80" alt="Athlete strength training with weights" loading="lazy">
+        </div>
         <div class="program-card-body">
+          <span class="program-number">02</span>
           <h4>Strength Training</h4>
           <p>Placeholder description — age-appropriate strength and power development to build a more durable, explosive athlete season after season.</p>
         </div>
       </article>
 
-      <article class="program-card">
-        <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=700&q=80" alt="Group of young athletes training together" loading="lazy">
+      <article class="program-card reveal-up" style="transition-delay:.2s">
+        <div class="program-card-img">
+          <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=700&q=80" alt="Group of young athletes training together" loading="lazy">
+        </div>
         <div class="program-card-body">
+          <span class="program-number">03</span>
           <h4>Group Classes &amp; Camps</h4>
           <p>Placeholder description — competitive, coached group sessions and camps that build work ethic, accountability, and team-level intensity.</p>
         </div>
@@ -80,19 +95,34 @@
 
 <section class="section credibility">
   <div class="container credibility-inner">
-    <img src="https://images.unsplash.com/photo-1519861531473-9200262188bf?auto=format&fit=crop&w=800&q=80" alt="Coach working with athlete" class="credibility-image" loading="lazy">
-    <div class="credibility-text">
+    <div class="credibility-image-wrap reveal-left">
+      <img src="https://images.unsplash.com/photo-1519861531473-9200262188bf?auto=format&fit=crop&w=800&q=80" alt="Coach working with athlete" class="credibility-image parallax-img" loading="lazy">
+    </div>
+    <div class="credibility-text reveal-right">
       <h2 class="section-kicker">Why Caliber</h2>
-      <h3 class="section-title">Coaching parents trust. Training athletes respect.</h3>
+      <h3 class="section-title">Coaching parents trust. <span class="accent-gold">Training athletes respect.</span></h3>
       <p>Placeholder text — coach background, certifications, and training philosophy go here. This is where we explain why parents hand us their kid's development, and why athletes buy in from day one.</p>
       <p>Placeholder text — track record, experience with middle and high school athletes, and what sets our coaching staff apart.</p>
     </div>
   </div>
 </section>
 
+<section class="section trainer" id="trainer">
+  <div class="container trainer-inner">
+    <div class="trainer-text reveal-left">
+      <h2 class="section-kicker">Meet Your Trainer</h2>
+      <h3 class="section-title">Cam Carrow, <span class="accent-gold">MS, CSCS</span></h3>
+      <p>Cam Carrow leads training at Caliber Sports Performance, bringing a Master of Science and CSCS certification — the industry standard credential for strength and conditioning professionals — to every session. Based right here in the Lynchburg area, Cam works independently with Caliber athletes, free to build every program around one thing: results. His approach is simple — help athletes achieve their full potential, and hold them to a standard that gets them there.</p>
+    </div>
+    <div class="trainer-image-wrap reveal-right">
+      <img src="Images/0J7A9341.webp" alt="Cam Carrow, MS, CSCS, founder and strength and conditioning coach at Caliber Sports Performance" class="trainer-image" loading="lazy">
+    </div>
+  </div>
+</section>
+
 <section class="cta" id="book">
-  <div class="container cta-inner">
-    <h2 class="cta-title">Ready to raise your caliber?</h2>
+  <div class="container cta-inner reveal">
+    <h2 class="cta-title">Ready to raise your <span class="accent-gold">caliber?</span></h2>
     <p class="cta-sub">Spots fill up. Book your session or class now — real scheduling coming soon, this button is a placeholder.</p>
     <a href="#" class="btn btn-primary btn-large">Book Now</a>
   </div>
@@ -113,5 +143,6 @@
   </div>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
